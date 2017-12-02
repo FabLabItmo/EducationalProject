@@ -21,6 +21,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityMainBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
-        binding.setVm(new ViewModel("https://vignette.wikia.nocookie.net/fantendo/images/f/fa/Mario_NASASR.png"));
+        binding.setVm(new ViewModel());
     }
 }
