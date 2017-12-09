@@ -2,15 +2,23 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
+        <import type="android.view.View"/>
         <variable
             name="item"
-            type="ru.ifmo.fablab.myapplication.ItemModel"/>
+            type="ru.ifmo.fablab.myapplication.ItemViewModel"/>
     </data>
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:url="@{item.url}">
-    </ImageView>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="@{()-> item.onClick()}">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:url="@{item.itemModel.url}">
+        </ImageView>
+    </FrameLayout>
+
 </layout>
