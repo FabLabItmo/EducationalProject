@@ -1,4 +1,4 @@
-package ru.ifmo.fablab.myapplication;
+package ru.ifmo.fablab.myapplication.add;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -19,6 +19,7 @@ public class AddPictureDialogFragment extends AppCompatDialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         AddPictureDialogBinding binding = AddPictureDialogBinding.inflate(inflater,container,false);
+        binding.setVm(new AddPictureDialogViewModel());
         return binding.getRoot();
     }
 }

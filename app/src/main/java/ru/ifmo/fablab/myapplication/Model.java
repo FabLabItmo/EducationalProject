@@ -25,4 +25,7 @@ public class Model {
         items.add(new ItemModel("https://i.pinimg.com/736x/2b/46/d4/2b46d42cfc6070d3a41776bc2227f34b--mini-mario-mario-nintendo.jpg"));
     }
 
+    public void addPicture(String url){
+
+    }
 }

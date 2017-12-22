@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
+import ru.ifmo.fablab.myapplication.add.AddPictureDialogFragment;
 import ru.ifmo.fablab.myapplication.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements ItemSelectionListener, AddClickListener{
