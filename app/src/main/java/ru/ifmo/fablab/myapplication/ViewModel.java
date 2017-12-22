@@ -14,10 +14,13 @@ public class ViewModel implements ItemSelectionListener{
 
     public ItemBinding<ItemViewModel> itemBinding = ItemBinding.of(BR.item,R.layout.item_layout);
 
-    ItemSelectionListener itemSelectionListener;
+    private ItemSelectionListener itemSelectionListener;
 
-    public ViewModel(ItemSelectionListener itemSelectionListener) {
+    private AddClickListener addClickListener;
+
+    public ViewModel(ItemSelectionListener itemSelectionListener, AddClickListener addClickListener) {
         this.itemSelectionListener = itemSelectionListener;
+        this.addClickListener = addClickListener;
         for(ItemModel itemModel : Model.getInstance().items){
             models.add(new ItemViewModel(itemModel,this));
         }
@@ -26,5 +29,9 @@ public class ViewModel implements ItemSelectionListener{
     @Override
     public void onItemSelected(ItemModel item) {
         itemSelectionListener.onItemSelected(item);
+    }
+
+    public void onAddButtonClick(){
+        addClickListener.onAddClick();
     }
 }

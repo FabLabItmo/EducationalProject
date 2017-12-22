@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import ru.ifmo.fablab.myapplication.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements ItemSelectionListener{
+public class MainActivity extends AppCompatActivity implements ItemSelectionListener, AddClickListener{
     @BindingConversion
     public static int convertBooleanToVisibility(boolean b){
         return b ? View.VISIBLE : View.INVISIBLE;
@@ -29,13 +29,18 @@ public class MainActivity extends AppCompatActivity implements ItemSelectionList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityMainBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
-        final ViewModel vm = new ViewModel(this);
+        final ViewModel vm = new ViewModel(this,this);
         binding.setVm(vm);
     }
 
     @Override
     public void onItemSelected(ItemModel item) {
         showDetails(item);
+    }
+
+    @Override
+    public void onAddClick() {
+       new AddPictureDialogFragment().show(getSupportFragmentManager(),"Add dialog");
     }
 
     public void showDetails(ItemModel itemModel){
